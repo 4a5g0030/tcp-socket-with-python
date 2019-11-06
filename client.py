@@ -3,8 +3,8 @@ import cv2
 import pickle
 import struct
 
-host = "192.168.1.12"
-port = 12345
+host = ""
+port = 12346
 
 client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 client.connect((host, port))
@@ -25,4 +25,4 @@ while 1:
     print("{}: {}".format(img_counter, size))
     client.sendall(struct.pack(">L", size) + data)
     img_counter += 1
-    cv2.waitKey(1000)
+    cv2.waitKey(5000)
